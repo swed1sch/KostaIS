@@ -1,0 +1,10 @@
+﻿@model  IEnumerable<Department>
+
+    <h2>@foreach(var v in Model)
+    {
+        @v.Name
+        @v.Code
+        
+    }  
+    
+    </h2>

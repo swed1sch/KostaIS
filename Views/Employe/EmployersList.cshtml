@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Empoyee>
+
+    <h2>
+        @foreach (var v in Model)
+        {
+            <h4>@v.SurName</h4>
+            <h4>@v.FirstName</h4> 
+            @v.Position
+            
+        }
+
+    </h2>
