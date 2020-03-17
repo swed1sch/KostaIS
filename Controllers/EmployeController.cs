@@ -13,6 +13,13 @@ namespace KostaIS.Controllers
         public EmployeController(IEmploye employe) => this.employe = employe;
 
         public ViewResult EmployersList() => View(employe.Employers);
+        [HttpPost]
+        public IActionResult Create(Empoyee empoyee)
+        {
+            employe.AddEmploye(empoyee);
+            return RedirectToAction(nameof(EmployersList));
+        }
+        public IActionResult Create() => View();
 
         
     }

@@ -1,10 +1,18 @@
 ﻿@model  IEnumerable<Department>
 
-    <h2>@foreach(var v in Model)
+    @foreach(var v in Model)
     {
-        @v.Name
-        @v.Code
+        <h4>@v.Name</h4> 
+        @v.Code        
+        @foreach(var a in v.Employers)
+        {
+    <h4>
+        @a.SurName
+        @a.FirstName
+    </h4>
+            
+        }
         
     }  
+    <a asp-action="EmployersList" asp-controller="Employe"><button class="btn btn-primary">Список сотрудников</button></a>
     
-    </h2>

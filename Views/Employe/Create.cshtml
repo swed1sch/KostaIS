@@ -1,0 +1,19 @@
+﻿@model KostaIS.Models.Empoyee
+
+<title>Create employee</title>
+<form asp-action="Create" method="post">
+    
+    <p>
+        <label asp-for="FirstName">Имя</label>
+        <input asp-for="FirstName"/>
+    </p>
+    <p>
+        <label asp-for="SurName">Фамилия</label>
+        <input asp-for="SurName"/>
+    </p>
+    <p>
+        <label asp-for="Position">Должность</label>
+        <input asp-for="Position"/>
+    </p>
+    <button class="btn btn-primary" type="submit">Принять</button>
+</form>

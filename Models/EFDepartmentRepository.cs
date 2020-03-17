@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 
@@ -13,7 +14,7 @@ namespace KostaIS.Models
             context.Department.Remove(department);
             context.SaveChanges();
         }
-        public IQueryable<Department>Departments => context.Department;
+        public IQueryable<Department>Departments => context.Department.Include(c=>c.Employers);
 
         
     }
