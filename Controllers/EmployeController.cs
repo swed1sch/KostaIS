@@ -19,6 +19,7 @@ namespace KostaIS.Controllers
             employe.AddEmploye(empoyee);
             return RedirectToAction(nameof(EmployersList));
         }
+
         public IActionResult Create() => View();
 
         

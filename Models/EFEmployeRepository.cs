@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 namespace KostaIS.Models
@@ -10,8 +11,13 @@ namespace KostaIS.Models
 
         public void AddEmploye(Empoyee employe)
         {
+            
             context.Empoyee.Add(employe);
-            context.SaveChanges();
+            context.Database.OpenConnection();
+            context.Database.ExecuteSqlCommand("SET IDENTITY_INSERT dbo.Empoyee ON");
+            context.SaveChanges();            
+            context.Database.ExecuteSqlCommand("SET IDENTITY_INSERT dbo.Empoyee OFF");
+            context.Database.CloseConnection();
         }
         public IQueryable<Empoyee> Employers => context.Empoyee;
         public void DeleteEmploye(Empoyee employe)

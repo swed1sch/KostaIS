@@ -13,7 +13,8 @@ namespace KostaIS.Models
         public DateTime? DateOfBirth { get; set; }
         public string DocSeries { get; set; }
         public string DocNumber { get; set; }
-        public string Position { get; set; }        
+        public string Position { get; set; }
+        public Guid DepartmentID { get; set; }
 
     }
 }

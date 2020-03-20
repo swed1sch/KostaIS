@@ -2,7 +2,10 @@
 
 <title>Create employee</title>
 <form asp-action="Create" method="post">
-    
+    <p>
+        <label asp-for="ID">ID</label>
+        <input asp-for="ID" />
+    </p>
     <p>
         <label asp-for="FirstName">Имя</label>
         <input asp-for="FirstName"/>
@@ -14,6 +17,14 @@
     <p>
         <label asp-for="Position">Должность</label>
         <input asp-for="Position"/>
+    </p>
+    <p>
+        <label asp-for="DateOfBirth">Дата рождения</label>
+        <input asp-for="DateOfBirth" />
+    </p>
+    <p>
+        <label asp-for="DepartmentID">ID Отдела</label>
+        <input asp-for="DepartmentID"/>
     </p>
     <button class="btn btn-primary" type="submit">Принять</button>
 </form>
