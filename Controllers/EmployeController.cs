@@ -1,9 +1,6 @@
 ﻿using KostaIS.Models;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace KostaIS.Controllers
 {
@@ -19,7 +16,12 @@ namespace KostaIS.Controllers
             employe.AddEmploye(empoyee);
             return RedirectToAction(nameof(EmployersList));
         }
-
+        [HttpPost]
+        public IActionResult Delete(Empoyee empoyee)
+        {
+            employe.DeleteEmploye(empoyee);
+            return RedirectToAction(nameof(EmployersList));
+        }
         public IActionResult Create() => View();
 
         

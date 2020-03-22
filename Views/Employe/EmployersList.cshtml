@@ -1,15 +1,28 @@
 ﻿@model IEnumerable<Empoyee>
 
-    <h2>
-        @foreach (var v in Model)
-        {
-            <h4>@v.SurName</h4>
-            <h4>@v.FirstName</h4> 
-            @v.Position
-            
-        }
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <div class="col font-weight-bold">Фамилия/Имя</div>            
+            <div class="col font-weight-bold">Должность</div>
+        </div>
+            @foreach (var v in Model)
+            {
+            <div class="row p-1">
+                <div class="col">
+                    @v.SurName
+                    @v.FirstName
+                    <form asp-action="Delete" method="post">
+                        <input type="hidden" name="ID" value="@v.ID" />
+                        <button type="submit" class=" btn btn-outline-danger btn-sm">Удалить сотрудника</button>                        
+                    </form>
+                    
+                </div>
+                
+                <div class="col">@v.Position</div>
+            </div>
 
-    </h2>
-
+            }       
+    </div>
     <a asp-action="DepartmentList" asp-controller="Department"><button class="btn btn-primary" type="submit">Список отделов</button></a>
     <a asp-action="Create" asp-controller="Employe"><button class="btn btn-primary" type="submit">Добавить сотрудника</button></a>
+    

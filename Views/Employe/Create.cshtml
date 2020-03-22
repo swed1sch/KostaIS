@@ -22,9 +22,22 @@
         <label asp-for="DateOfBirth">Дата рождения</label>
         <input asp-for="DateOfBirth" />
     </p>
-    <p>
-        <label asp-for="DepartmentID">ID Отдела</label>
-        <input asp-for="DepartmentID"/>
-    </p>
-    <button class="btn btn-primary" type="submit">Принять</button>
+    
+    <label asp-for="DepartmentID" for="DepartmentID">ID Отдела</label>
+    <select asp-for="DepartmentID" class="form-control-sm" id="Department">
+
+        <option>7228cdf7-44b0-413f-99e3-61a2412b17d8</option>
+        <option>4415f812-689e-45ca-acf4-9db559233450</option>
+        <option>fb9d1a43-5796-4190-abd4-39ffd8c87476</option>
+        <option>0e8c5ab6-5031-4610-8ed6-58e7775b0e02</option>
+        <option>f05d646a-78b2-4ad7-97b9-59c2563e0a5e</option>
+        <option>e78999ae-84fc-4dbe-9b46-a77bab91c89d</option>
+        <option>0049ab7f-db91-4c93-bfe9-b91d62f3fa17</option>
+        <option>c17ac66a-88a5-462f-83ac-c447de599838</option>
+        <option>580917cf-0018-433e-b58e-d66ccb7ebdea</option>
+        <option>45594551-05eb-49f5-92e9-df96f4111d22</option>
+        <option>6453b876-8b5f-48a7-b088-f526eb592752</option>
+    </select>
+    
+    <button class="btn btn-outline-primary" type="submit">Принять</button>
 </form>

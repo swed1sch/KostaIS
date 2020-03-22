@@ -1,18 +1,33 @@
-﻿@model  IEnumerable<Department>
+﻿@model IEnumerable<Department>
 
-    @foreach(var v in Model)
-    {
-        <h4>@v.Name</h4> 
-        @v.Code        
-        @foreach(var a in v.Employers)
+<title>Список отделов</title>
+<div class="container-fluid mt-3">
+
+    <div id="accordion">
+        @foreach (var v in Model)
         {
-    <h4>
-        @a.SurName
-        @a.FirstName
-    </h4>
-            
+
+            <div class="card">
+                <div class="card-header">
+                    <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                        @v.Name                        
+                    </a>
+                </div>
+
+            </div>          
+         @foreach (var a in v.Employers)
+            {
+                <div class="card">
+                    <div id="collapseOne" class="collapse showing" data-parent="#accordion">
+                        <div>
+                            @a.SurName
+                            @a.FirstName
+                        </div>
+                    </div>
+                </div>               
+            }
         }
-        
-    }  
+        </div>
+    </div>
+
     <a asp-action="EmployersList" asp-controller="Employe"><button class="btn btn-primary">Список сотрудников</button></a>
-    
