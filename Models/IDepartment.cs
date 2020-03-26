@@ -6,5 +6,6 @@ namespace KostaIS.Models
     {
         IQueryable<Department> Departments { get; }
         void DeleteDepartment(Department department);
+        void AddDepartment(Department department);
     }
 }

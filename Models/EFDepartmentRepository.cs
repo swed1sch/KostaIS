@@ -12,8 +12,19 @@ namespace KostaIS.Models
         public void DeleteDepartment(Department department)
         {
             context.Department.Remove(department);
+            
             context.SaveChanges();
+            
         }
+
+        public void AddDepartment(Department department)
+        {
+            context.Department.Add(department);
+            
+            context.SaveChanges();
+            
+        }
+
         public IQueryable<Department>Departments => context.Department.Include(c=>c.Employers);
 
         

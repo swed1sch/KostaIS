@@ -1,0 +1,12 @@
+﻿@model KostaIS.Models.Department
+
+
+<form asp-action="CreateDepartment" method="post">
+    <div class="">
+        <label asp-for="ID">ID</label>
+        <input asp-for="ID" />
+        <label asp-for="Name">Наименование отдела</label>
+        <input asp-for="Name"/>                
+    </div>
+    <button type="submit" class="btn btn-outline-danger">Принять</button>
+</form>

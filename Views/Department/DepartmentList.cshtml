@@ -7,15 +7,18 @@
         @foreach (var v in Model)
         {
 
-            <div class="card">
-                <div class="card-header">
-                    <a class="card-link" data-toggle="collapse" href="#collapseOne">
-                        @v.Name                        
-                    </a>
-                </div>
-
-            </div>          
-         @foreach (var a in v.Employers)
+        <div class="card">
+            <div class="card-header">
+                <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                    @v.Name
+                </a>
+            </div>
+            <form asp-action="DeleteDepartment" method="post">
+                <input type="hidden" name="ID" value="@v.ID" />
+                <button type="submit" class=" btn btn-outline-danger btn-sm">Удалить отдел</button>
+            </form>
+        </div>
+            @foreach (var a in v.Employers)
             {
                 <div class="card">
                     <div id="collapseOne" class="collapse showing" data-parent="#accordion">
@@ -24,10 +27,13 @@
                             @a.FirstName
                         </div>
                     </div>
-                </div>               
+                </div>
             }
         }
-        </div>
     </div>
+</div>
 
-    <a asp-action="EmployersList" asp-controller="Employe"><button class="btn btn-primary">Список сотрудников</button></a>
+<a asp-action="EmployersList" asp-controller="Employe"><button class="btn btn-primary">Список сотрудников</button></a>
+<a asp-action="CreateDepartment" asp-controller="Department"><button class="btn btn-outline-primary">Добавить отел</button></a>
+
+

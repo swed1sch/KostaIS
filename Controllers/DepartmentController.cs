@@ -1,9 +1,6 @@
 ﻿using KostaIS.Models;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace KostaIS.Controllers
 {
@@ -13,5 +10,19 @@ namespace KostaIS.Controllers
         public DepartmentController(IDepartment department) => this.department = department;
         public ViewResult DepartmentList() => View(department.Departments);
         
+        [HttpPost]
+        public IActionResult CreateDepartment(Department department)
+        {
+            this.department.AddDepartment(department);
+            return RedirectToAction(nameof(DepartmentList));
+        }
+        public ViewResult CreateDepartment() => View();
+        [HttpPost]
+        public IActionResult DeleteDepartment(Department department)
+        {
+            this.department.DeleteDepartment(department);
+            return RedirectToAction(nameof(DepartmentList));
+        }
+        public ViewResult DeleteDepartment() => View();
     }
 }
