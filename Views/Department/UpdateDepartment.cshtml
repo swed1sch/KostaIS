@@ -1,0 +1,20 @@
+﻿@model Department
+
+<form asp-action="UpdateDepartment" method="post">
+    <div class="form-group">
+        <label asp-for="ID"></label>
+        <input asp-for="ID" class="form-control-sm" readonly />
+    </div>
+    <div class="form-group">
+        <label asp-for="Name">Название отдела</label>
+        <input asp-for="Name" class="form-control-sm"/>
+    </div>
+    <div class="form-group">
+        <label asp-for="Code">Код отдела</label>
+        <input asp-for="Code" class="form-control-sm" />
+    </div>
+    <div class=" text-center">
+        <button class="btn btn-outline-primary" type="submit">Сохранить</button>
+        <a asp-action="DepartmentList" class="btn btn-outline-secondary">Отмена</a>
+    </div>
+</form>

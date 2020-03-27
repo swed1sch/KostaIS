@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
 namespace KostaIS.Models
 {
@@ -7,5 +8,7 @@ namespace KostaIS.Models
         IQueryable<Department> Departments { get; }
         void DeleteDepartment(Department department);
         void AddDepartment(Department department);
+        Department GetDepartment(Guid key);
+        void UpdateDepartment(Department department);
     }
 }

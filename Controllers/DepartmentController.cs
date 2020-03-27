@@ -1,6 +1,6 @@
 ﻿using KostaIS.Models;
 using Microsoft.AspNetCore.Mvc;
-
+using System;
 
 namespace KostaIS.Controllers
 {
@@ -24,5 +24,15 @@ namespace KostaIS.Controllers
             return RedirectToAction(nameof(DepartmentList));
         }
         public ViewResult DeleteDepartment() => View();
+        public IActionResult UpdateDepartment(Guid key)
+        {
+            return View(department.GetDepartment(key));
+        }
+        [HttpPost]
+        public IActionResult UpdateDepartment(Department department)
+        {
+            this.department.UpdateDepartment(department);
+            return RedirectToAction(nameof(DepartmentList));
+        }
     }
 }

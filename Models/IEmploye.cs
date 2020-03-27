@@ -8,5 +8,7 @@ namespace KostaIS.Models
         void AddEmploye(Empoyee employe);
         void DeleteEmploye(Empoyee employe);
         IQueryable<Empoyee> Employers { get; }
+        Empoyee GetEmpoyee(decimal key);
+        void UpdateEmployee(Empoyee employee);
     }
 }

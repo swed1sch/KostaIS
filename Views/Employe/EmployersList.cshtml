@@ -13,9 +13,9 @@
                     @v.FirstName
                     <form asp-action="Delete" method="post">
                         <input type="hidden" name="ID" value="@v.ID" />
-                        <button type="submit" class=" btn btn-outline-danger btn-sm">Удалить сотрудника</button>                        
+                        <button type="submit" class=" btn btn-outline-danger btn-sm">Удалить сотрудника</button>
                     </form>
-                    
+                    <a asp-action="UpdateEmployee" class=" btn btn-outline-primary btn-sm">Изменить</a>
                 </div>
                 
                 <div class="col">@v.Position</div>

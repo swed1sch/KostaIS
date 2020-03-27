@@ -27,5 +27,16 @@ namespace KostaIS.Models
             context.Database.ExecuteSqlCommand("SET IDENTITY_INSERT dbo.Empoyee OFF");
             context.Database.CloseConnection();
         }
+
+        public Empoyee GetEmpoyee(decimal key) => context.Empoyee.Find(key);
+
+        public void UpdateEmployee(Empoyee employee)
+        {
+            context.Empoyee.Update(employee);
+            context.Database.ExecuteSqlCommand("SET IDENTITY_INSERT dbo.Empoyee ON");
+            context.SaveChanges();
+            context.Database.ExecuteSqlCommand("SET IDENTITY_INSERT dbo.Empoyee OFF");
+            context.Database.CloseConnection();
+        }
     }
 }

@@ -23,6 +23,16 @@ namespace KostaIS.Controllers
             return RedirectToAction(nameof(EmployersList));
         }
         public IActionResult Create() => View();
+        [HttpPost]
+        public IActionResult UpdateEmployee(Empoyee empoyee)
+        {
+            this.employe.UpdateEmployee(empoyee);
+            return RedirectToAction(nameof(EmployersList));
+        }
+        public IActionResult UpdateEmployee(decimal key)
+        {            
+            return View(employe.GetEmpoyee(key));
+        }
 
         
     }

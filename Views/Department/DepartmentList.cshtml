@@ -17,6 +17,10 @@
                 <input type="hidden" name="ID" value="@v.ID" />
                 <button type="submit" class=" btn btn-outline-danger btn-sm">Удалить отдел</button>
             </form>
+            <form action="UpdateDepartment">
+                <button type="submit" class=" btn btn-outline-primary btn-sm">Изменить отдел</button>
+            </form>
+            
         </div>
             @foreach (var a in v.Employers)
             {
@@ -33,7 +37,7 @@
     </div>
 </div>
 
-<a asp-action="EmployersList" asp-controller="Employe"><button class="btn btn-primary">Список сотрудников</button></a>
-<a asp-action="CreateDepartment" asp-controller="Department"><button class="btn btn-outline-primary">Добавить отел</button></a>
+<a asp-action="EmployersList" asp-controller="Employe" class="btn btn-primary">Список сотрудников</a>
+<a asp-action="CreateDepartment" asp-controller="Department" class="btn btn-outline-primary">Добавить отел</a>
 
 
